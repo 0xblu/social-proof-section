@@ -4,13 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-
   <title>Frontend Mentor | Social proof section</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution {
       font-size: 11px;
@@ -20,58 +15,125 @@
     .attribution a {
       color: hsl(228, 45%, 44%);
     }
+
+    body {
+      background-image: url('images/bg-pattern-top-mobile.svg'), url('images/bg-pattern-bottom-mobile.svg');
+      background-position: top left, bottom right;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        background-image: url('images/bg-pattern-top-desktop.svg'), url('images/bg-pattern-bottom-desktop.svg');
+        background-position: top left, bottom right;
+        background-repeat: no-repeat;
+        background-size: 50% auto, 80% auto;
+      }
+    }
   </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <h1 class="main-title">10,000+ of our users love our products.</h1>
+<body class="min-h-screen flex flex-col justify-center items-center p-4 md:p-8 bg-white">
+  <main class="max-w-6xl mx-auto w-full relative z-10">
+    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center">
+      <div class="max-w-md mx-auto lg:mx-0 text-center lg:text-left px-4 py-8 lg:w-1/2">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-fuchsia-950">
+          10,000+ of our users love our products.
+        </h1>
+        <p class="text-lg text-fuchsia-950">
+          We only provide great products combined with excellent customer service.
+          See what our satisfied customers are saying about our services.
+        </p>
+      </div>
 
-  <p class="description">
-    We only provide great products combined with excellent customer service.
-    See what our satisfied customers are saying about our services.
-  </p>
-
-  <div class="ratings">
-    <div class="rating-item">Rated 5 Stars in Reviews</div>
-    <div class="rating-item">Rated 5 Stars in Report Guru</div>
-    <div class="rating-item">Rated 5 Stars in BestTech</div>
-  </div>
-
-  <div class="testimonials">
-    <div class="testimonial">
-      <h2 class="testimonial-name">Colton Smith</h2>
-      <p class="testimonial-status">Verified Buyer</p>
-      <p class="testimonial-text">
-        "We needed the same printed design as the one we had ordered a week prior.
-        Not only did they find the original order, but we also received it in time.
-        Excellent!"
-      </p>
+      <div class="space-y-4 max-w-xl mx-auto lg:mx-0 px-4 lg:w-1/2">
+        <div class="flex flex-col md:flex-row items-center bg-purple-100 rounded-lg p-4 md:w-11/12">
+          <div class="flex mb-2 md:mb-0 md:mr-4">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5 mr-1">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5 mr-1">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5 mr-1">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5 mr-1">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5">
+          </div>
+          <p class="text-fuchsia-950 font-bold">Rated 5 Stars in Reviews</p>
+        </div>
+        <div class="flex flex-col md:flex-row items-center bg-purple-100 rounded-lg p-4 md:w-11/12 lg:ml-12">
+          <div class="flex mb-2 md:mb-0 md:mr-4">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5 mr-1">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5 mr-1">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5 mr-1">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5 mr-1">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5">
+          </div>
+          <p class="text-fuchsia-950 font-bold">Rated 5 Stars in Report Guru</p>
+        </div>
+        <div class="flex flex-col md:flex-row items-center bg-purple-100 rounded-lg p-4 md:w-11/12 lg:ml-24">
+          <div class="flex mb-2 md:mb-0 md:mr-4">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5 mr-1">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5 mr-1">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5 mr-1">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5 mr-1">
+            <img src="images/icon-star.svg" alt="Star" class="w-5 h-5">
+          </div>
+          <p class="text-fuchsia-950 font-bold">Rated 5 Stars in BestTech</p>
+        </div>
+      </div>
     </div>
 
-    <div class="testimonial">
-      <h2 class="testimonial-name">Irene Roberts</h2>
-      <p class="testimonial-status">Verified Buyer</p>
-      <p class="testimonial-text">
-        "Customer service is always excellent and very quick turn around. Completely
-        delighted with the simplicity of the purchase and the speed of delivery."
-      </p>
-    </div>
+    <div class="testimonials mt-16 grid gap-8 md:grid-cols-3">
+      <div class="testimonial bg-fuchsia-950 text-white p-8 rounded-lg shadow-lg">
+        <div class="flex items-center mb-4">
+          <img src="images/image-colton.jpg" alt="Colton Smith" class="w-10 h-10 rounded-full mr-4">
+          <div>
+            <h2 class="font-bold">Colton Smith</h2>
+            <p class="text-pink-400 text-sm">Verified Buyer</p>
+          </div>
+        </div>
+        <p class="text-sm leading-relaxed">
+          "We needed the same printed design as the one we had ordered a week prior.
+          Not only did they find the original order, but we also received it in time.
+          Excellent!"
+        </p>
+      </div>
 
-    <div class="testimonial">
-      <h2 class="testimonial-name">Anne Wallace</h2>
-      <p class="testimonial-status">Verified Buyer</p>
-      <p class="testimonial-text">
-        "Put an order with this company and can only praise them for the very high
-        standard. Will definitely use them again and recommend them to everyone!"
-      </p>
-    </div>
-  </div>
+      <div class="testimonial bg-fuchsia-950 text-white p-8 rounded-lg shadow-lg md:translate-y-4">
+        <div class="flex items-center mb-4">
+          <img src="images/image-irene.jpg" alt="Irene Roberts" class="w-10 h-10 rounded-full mr-4">
+          <div>
+            <h2 class="font-bold">Irene Roberts</h2>
+            <p class="text-pink-400 text-sm">Verified Buyer</p>
+          </div>
+        </div>
+        <p class="text-sm leading-relaxed">
+          "Customer service is always excellent and very quick turn around. Completely
+          delighted with the simplicity of the purchase and the speed of delivery."
+        </p>
+      </div>
 
-  <div class="attribution">
+      <div class="testimonial bg-fuchsia-950 text-white p-8 rounded-lg shadow-lg md:translate-y-8">
+        <div class="flex items-center mb-4">
+          <img src="images/image-anne.jpg" alt="Anne Wallace" class="w-10 h-10 rounded-full mr-4">
+          <div>
+            <h2 class="font-bold">Anne Wallace</h2>
+            <p class="text-pink-400 text-sm">Verified Buyer</p>
+          </div>
+        </div>
+        <p class="text-sm leading-relaxed">
+          "Put an order with this company and can only praise them for the very high
+          standard. Will definitely use them again and recommend them to everyone!"
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="attribution mt-8 relative z-10">
     Challenge by
-    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your
-      Name Here</a>.
-  </div>
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+      href="https://github.com/0xblu" target="_blank">0xblu</a>.
+
+  </footer>
 </body>
 
 </html>
